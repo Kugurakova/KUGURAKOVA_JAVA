@@ -1,10 +1,9 @@
 package ru.kugurakova;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
-
 public class Main {
 
     public static void main(String[] args) {
+//        MatrixWorker matrixWorker = new MatrixWorker();
         int N=3;
         int mat1[][] = new int[N][N];
         int mat2[][] = new int[N][N];
@@ -27,14 +26,14 @@ public class Main {
                 mat2[j][i]=2*j+i;
             }
         }
-        MatrixWorker.print(mat1);
+//        MatrixWorker.print(mat1);
         System.out.println();
-        MatrixWorker.print(mat2);
-        mat3=MatrixWorker.sum(mat1,mat2);
-        mat4=MatrixWorker.mult(mat1,mat2);
+//        MatrixWorker.print(mat2);
+//        mat3=MatrixWorker.sum(mat1,mat2);
+//        mat4=MatrixWorker.mult(mat1,mat2);
         System.out.println();
-        MatrixWorker.print(mat3);
+//        MatrixWorker.print(mat3);
         System.out.println();
-        MatrixWorker.print(mat4);
+//        MatrixWorker.print(mat4);
     }
 }

@@ -2,16 +2,7 @@ package ru.kugurakova;
 
 public class MatrixWorker {
 
-    public void print(int m[][]) {
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[i].length; j++) {
-                System.out.print(m[i][j]+ " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public int[][] sum(int a[][], int b[][]) {
+    public static int[][] sum(int a[][], int b[][]) {
         int c[][] = new int[a.length][a.length];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
@@ -20,8 +11,7 @@ public class MatrixWorker {
         }
         return c;
     }
-
-    public int[][] mult(int a[][], int b[][]) {
+    public static int[][] mult(int a[][], int b[][]) {
         int c[][] = new int[a.length][a.length];
         int v = 0;
         for (int i = 0; i < a.length; i++) {
@@ -31,9 +21,18 @@ public class MatrixWorker {
                     v = v + a[i][k] * b[k][j];
                     c[i][j]=c[i][j]+a[i][k]*b[k][j];
                 }
-//                c[i][j]=v;
             }
         }
         return c;
     }
+    public static void print(int m[][]) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j]+ " ");
+            }
+            System.out.println();
+        }
+    }
 }
+
+
