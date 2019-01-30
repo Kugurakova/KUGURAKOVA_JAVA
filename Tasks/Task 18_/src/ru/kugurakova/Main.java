@@ -3,7 +3,7 @@ package ru.kugurakova;
 public class Main {
 
     public static void main(String[] args) {
-//        MatrixWorker matrixWorker = new MatrixWorker();
+        MatrixWorker matrixWorker = new MatrixWorker();
         int n=4;
         int mat1[][] = new int[n][n];
         int mat2[][] = new int[n][n];
@@ -21,14 +21,14 @@ public class Main {
             }
         }
         System.out.println("mat1");
-        MatrixWorker.print(mat1);
+        matrixWorker.print(mat1);
         System.out.println("mat2");
-        MatrixWorker.print(mat2);
-        mat3 = MatrixWorker.sum(mat1,mat2);
+        matrixWorker.print(mat2);
+        mat3 = matrixWorker.sum(mat1,mat2);
+        mat4 = matrixWorker.mult(mat1,mat2);
         System.out.println("mat3");
-        MatrixWorker.print(mat3);
-        mat4 = MatrixWorker.mult(mat1,mat2);
+        matrixWorker.print(mat3);
         System.out.println("mat4");
-        MatrixWorker.print(mat4);
+        matrixWorker.print(mat4);
     }
 }

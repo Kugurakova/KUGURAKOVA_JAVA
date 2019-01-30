@@ -19,8 +19,8 @@ public class Program {
         return this.len;
     }
 
-    public double setLen(double len) {
-      return  this.len = len;
+    public void setLen(double len) {
+           this.len = len;
     }
 
     public void showProgram (){
