@@ -17,11 +17,25 @@ public class Main {
         souz.setNumber("r333");
         Bicycle kama = new Bicycle();
         kama.setNumber("velik");
-        System.out.println(tu54.getNumber());
-        System.out.println(parkMega.cntFreePlaces());
+        System.out.println("Свобоных месть:" + parkMega.getCountSpace());
+        System.out.println("Припаркован:"+tu54.getNumber() + " " + tu54.getParked());
+        parkMega.park(tu54);
+        System.out.println("Припаркована:"+tu54.getNumber() + " " + tu54.getParked());
+        parkMega.park(tu54);
+        parkMega.park(lada);
+        parkMega.park(t26);
+        parkMega.park(mi8);
+        parkMega.park(souz);
+        System.out.println("Свобоных месть:" + parkMega.getCountSpace());
+        parkMega.unpark(kama.getNumber());
+        parkMega.park(kama);
+        parkMega.unpark(mi8.getNumber());
+        System.out.println("Свобоных месть:" + parkMega.getCountSpace());
+        parkMega.park(kama);
+        System.out.println("Свобоных месть:" + parkMega.getCountSpace());
+        System.out.println("Свобоных месть:" + parkMega.getCountSpace());
 
-//        parkMega.Par
-//        parkMega.park(tu54);
+
 
     }
 }
