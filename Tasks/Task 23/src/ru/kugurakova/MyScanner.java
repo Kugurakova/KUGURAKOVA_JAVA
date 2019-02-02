@@ -11,6 +11,14 @@ public class MyScanner {
     }
 
     public int nextInt() throws Exception  {
-        return inputstream.read();
+        int i = 0;
+        int result = 0;
+        while (i != -1) {
+            if ((i != -1)&&('0' <= i)&&(i <= '9')){
+                result = result*10 + i - '0';
+            }
+            i = this.inputstream.read();
+        }
+     return result;
     }
 }
