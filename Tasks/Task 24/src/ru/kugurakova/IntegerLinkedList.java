@@ -9,6 +9,48 @@ public class IntegerLinkedList implements IntegerList {
         this.top = null;
         this.count = 0;
     }
+    public void reverse(){// перевернуть
+        int value;
+        int index = count;
+        if (count>1) {
+            Node current = top;
+            for (int j = 0; j*2 < count ; j++) {
+                value =current.getValue();
+                current.setValue(get(index-1));
+                update(value, index-1);
+                current = current.getNext();
+                index=index-1;
+            }
+        }
+    }
+    public void sort() { // сортировка
+        int newvalue;
+        int index;
+        int oldvalue;
+        if (count>1) {
+            Node current;
+            Node update = top;
+            index = 0;
+            for (int j = 1; j < count ; j++) {
+                current = update;
+                newvalue = current.getValue();
+                for (int i = j; i < count; i++) {
+                    current = current.getNext();
+                    if (newvalue >= current.getValue()) {
+                        index = i;
+                        newvalue = current.getValue();
+                    }
+                }
+                if (update.getValue() != newvalue){
+                    oldvalue = update.getValue();
+                    update.setValue(newvalue);
+                    update(oldvalue, index);
+                }
+                update = update.getNext();
+            }
+        }
+    }
+
     public void addToEnd(int value) {
         Node node = new Node(value);
         if (top == null) {
@@ -67,6 +109,25 @@ public class IntegerLinkedList implements IntegerList {
         }
         count++;
     }
+    public void update(int value, int index) {// вставить по индексу со сдвигом
+        Node current = top;
+        if (index == 0 ) {
+            top.setValue(value);
+        }
+        if (index == count-1 ) {
+            tail.setValue(value);
+        }
+        else {
+            for (int i = 1; i <= index; i++) {
+                current = current.getNext();
+                if (i == index ){
+                    current.setValue(value);
+                }
+
+            }
+        }
+    }
+
     public int getCount(){
         return count;
     }
@@ -109,11 +170,13 @@ public class IntegerLinkedList implements IntegerList {
     }
 
     public void print() {
-        Node current = top;
-        System.out.print(current.getValue());
-        while (current.getNext() != null) {
-            current = current.getNext();
-            System.out.print(" " + current.getValue());
+        if (top != null) {
+            Node current = top;
+            System.out.print(current.getValue());
+            while (current.getNext() != null) {
+                current = current.getNext();
+                System.out.print(" " + current.getValue());
+            }
         }
         System.out.println();
     }

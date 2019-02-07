@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         IntegerLinkedList list1 = new IntegerLinkedList();
-        LinkedList l2 = new LinkedList();
         list1.addToEnd(1);
         list1.addToEnd(2);
         list1.addToEnd(3);
@@ -29,12 +28,13 @@ public class Main {
         System.out.println("indexOf(19) - "+list1.indexOf(19));
         System.out.println("contains(23) - "+list1.contains(23));
         System.out.println("indexOf(23) - "+list1.indexOf(23));
-        System.out.println();
-        l2.add(1);
-        l2.add(2);
-        l2.add(2,2);
-        System.out.println(l2.indexOf(2));
-//        System.out.println(l2.indexOf(2));
-//        System.out.println(l2.indexOf(3));
+        list1.print();
+        System.out.println("Отсортированный");
+        list1.sort();
+        list1.print();
+        list1.addToEnd(21);
+        System.out.println("Перевернутый");
+        list1.reverse();
+        list1.print();
     }
 }
