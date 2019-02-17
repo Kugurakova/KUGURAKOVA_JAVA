@@ -13,13 +13,13 @@ public class Main {
         while (iteratorLinked.hasNext()) {
             System.out.println(iteratorLinked.next().toString());
         }
-        ArrayList<Car> carArray = new ArrayList<>();
+        List<Car> carArray = new ArrayList<>();
         carArray.add(new Car("bmw",2011,65000));
         carArray.add(new Car("kia",2014,40000));
         carArray.add(new Car("gaz",2014,10000));
         carArray.addToBegin(new Car("uaz",2017,10000));
 
-        Iterator iteratorArray = carArray.iterator();
+        Iterator iteratorArray = ((ArrayList<Car>) carArray).iterator();
         System.out.println("Array");
         while (iteratorArray.hasNext()) {
             System.out.println(iteratorArray.next().toString());

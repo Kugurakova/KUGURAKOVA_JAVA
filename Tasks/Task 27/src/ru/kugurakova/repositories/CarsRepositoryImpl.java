@@ -57,16 +57,18 @@ public class CarsRepositoryImpl implements CarsRepository {
             FileReader fileReader = new FileReader(fileName);
             BufferedReader reader = new BufferedReader(fileReader);
             String currentLine = reader.readLine();
+//            List<Car> carArray = new ArrayList<>();
+            ArrayList<Car> carArray = new ArrayList<>();
             while (currentLine != null) {
                 String carData[] = currentLine.split(" ");
                 if (user.getId() == Integer.parseInt(carData[2])) {
                     Car car = new Car(carData[1], Integer.parseInt(carData[2]));
                     car.setId(Integer.parseInt(carData[0]));
-                    return null; //car;
+                    carArray.add(car);
                 }
                 currentLine = reader.readLine();
             }
-            return null;
+            return carArray;
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }

@@ -19,9 +19,10 @@ public class Main {
         CarsRepository carsRepository = new CarsRepositoryImpl("cars.txt", idCar);
 //        User user = retriever.retrieveUser();
 //        usersRepository.save(user);
-        System.out.println(carsRepository.find(75));
         System.out.println(usersRepository.find(0));
         System.out.println(usersRepository.find(123));
         System.out.println(usersRepository.find(32));
+        System.out.println(carsRepository.find(75));
+        System.out.println(carsRepository.findByOwner(new User("Marsel","Sidikov","marsel007","qazxsww007")));
     }
 }
