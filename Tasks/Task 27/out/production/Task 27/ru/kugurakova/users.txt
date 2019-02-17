@@ -1,4 +1,0 @@
-0 Ivan Ivanov ivan001 qazxsw001
-1 Semen Semenov semen002 qazxsw002
-123 Marsel Sidikov marsel007 qazxsw007
-32 Salavat Zabirov salavat008 qazxsw008

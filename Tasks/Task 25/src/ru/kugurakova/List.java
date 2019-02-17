@@ -7,7 +7,7 @@ public interface List<V> {
     void insert(V element, int index); // вставить по индексу со сдвигом
     int getCount(); // количество элементов
     void reverse(); // перевернуть
-//    void sort(); // сортировка
+//    void sort(); // сортировка в Algorithms
 //    boolean contains(V element); // возвращает true, если список содержит заданный элемент
 //    int indexOf(V element);  // возвращает индекс элемента, если он есть в списке, -1 - если не нашел ничего
 //    void remove(int index); //удаление по индексу

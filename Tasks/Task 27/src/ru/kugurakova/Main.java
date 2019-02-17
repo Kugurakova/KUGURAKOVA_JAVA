@@ -13,9 +13,10 @@ public class Main {
 
     public static void main(String[] args) {
         UserFromConsoleRetriever retriever = new UserFromConsoleRetriever();
-        IdGenerator idGenerator = new IdGenerator("C:\\Users\\user\\Desktop\\KUGURAKOVA_JAVA\\Tasks\\Task 27\\src\\ru\\kugurakova\\users_id_sequence.txt");
-        UsersRepository usersRepository = new UsersRepositoryImpl("C:\\Users\\user\\Desktop\\KUGURAKOVA_JAVA\\Tasks\\Task 27\\src\\ru\\kugurakova\\users.txt", idGenerator);
-        CarsRepository carsRepository = new CarsRepositoryImpl("C:\\Users\\user\\Desktop\\KUGURAKOVA_JAVA\\Tasks\\Task 27\\src\\ru\\kugurakova\\cars.txt", idGenerator);
+        IdGenerator idGenerator = new IdGenerator("users_id_sequence.txt");
+        UsersRepository usersRepository = new UsersRepositoryImpl("users.txt", idGenerator);
+        IdGenerator idCar = new IdGenerator("cars_id_sequence.txt");
+        CarsRepository carsRepository = new CarsRepositoryImpl("cars.txt", idCar);
 //        User user = retriever.retrieveUser();
 //        usersRepository.save(user);
         System.out.println(carsRepository.find(75));
