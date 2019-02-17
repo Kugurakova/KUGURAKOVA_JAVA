@@ -13,3 +13,4 @@ public interface List<V> {
 //    void remove(int index); //удаление по индексу
 
 }
+

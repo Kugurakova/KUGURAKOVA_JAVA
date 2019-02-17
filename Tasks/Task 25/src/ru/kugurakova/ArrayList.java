@@ -22,12 +22,12 @@ public class ArrayList<T> implements List<T> {
         T pold;
         T pnew = element;
 //        insert(element, 0);
-		for (int i = 0; i <= count; i++) {
-			pold = this.lines[i];
-			this.lines[i] =pnew;
-			pnew = pold;
-		}
-		count++;
+        for (int i = 0; i <= count; i++) {
+            pold = this.lines[i];
+            this.lines[i] =pnew;
+            pnew = pold;
+        }
+        count++;
     }
 
     public void insert(T element, int index){ // вставить по индексу со сдвигом

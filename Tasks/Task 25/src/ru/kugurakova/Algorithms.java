@@ -61,7 +61,7 @@ public class Algorithms {
                     int compareResult = 0;
                     if (comparator == null) {
                         compareResult = ((Comparable<T>) newvalue).compareTo((T) current.getValue()); }
-                        else {
+                    else {
                         compareResult = comparator.compare(newvalue,(T) current.getValue());
                     }
                     if (compareResult > 0) {
