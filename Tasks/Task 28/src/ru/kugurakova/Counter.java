@@ -1,8 +1,12 @@
 package ru.kugurakova;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Counter extends Thread {
     private int from;
     private int to;
+    private static final Lock lock = new ReentrantLock();
     private int array[];
 
     private int sumResult;
@@ -13,15 +17,17 @@ public class Counter extends Thread {
         this.array = array;
     }
 
+    public int getSumResult() {
+        return sumResult;
+    }
+
     @Override
     public void run() {
         // TODO: считаете числа от from до to и кладете результат в sumResult.
+        lock.lock();
         for (int i = from; i <= to; i++) {
             sumResult = sumResult + array[i];
         }
-    }
-
-    public int getSumResult() {
-        return sumResult;
+        lock.unlock();
     }
 }
