@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.List;
 
 public class Main {
+    public static int Summa = 0;
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
@@ -26,17 +27,17 @@ public class Main {
         System.out.println("sumArray: " + sumArray);
         // TODO: создаете массив потоков
         List<Counter> ptkArray = new ArrayList();
+//        Counter ptkArray[] = new Counter[threadsCount];
         // TODO: каждому потоку назначете свой участок
         int from=0;
         int to = numbersCount/threadsCount;
         int count = 0;
         while (count < threadsCount) {
             ptkArray.add(count, new Counter(from, to, array));
+  //          ptkArray[count] = new Counter(from,to,array);
             // TODO: запускаете каждый поток
             ptkArray.get(count).start();
-//            System.out.println("getSumResult("+count+"): " + ptkArray.get(count).getSumResult());
-//            ptkArray.get(count).join();
-//            SumResult = SumResult + ptkArray.get(count).getSumResult();
+//            ptkArray[count].start();
             count++;
             from = to+1;
             if (count < threadsCount-1) {
@@ -46,10 +47,10 @@ public class Main {
         }
         // TODO: здесь у каждого потока берете sumResult и складываете, смотрите результат.
         for(int i = 0; i < threadsCount; i++){
-//            ptkArray.get(i).join();
-//            System.out.println("getSumResult("+i+"): " + ptkArray.get(i).getSumResult());
+            ptkArray.get(i).join();
             SumResult = SumResult + ptkArray.get(i).getSumResult();
         }
+        System.out.println("SummaResult: " + Summa);
         System.out.println("SumResult: " + SumResult);
     }
 }

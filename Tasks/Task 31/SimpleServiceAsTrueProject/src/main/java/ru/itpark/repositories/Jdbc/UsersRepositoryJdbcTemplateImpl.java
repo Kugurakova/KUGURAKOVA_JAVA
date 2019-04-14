@@ -1,4 +1,4 @@
-package ru.itpark.repositories.jdbc;
+package ru.itpark.repositories.Jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;

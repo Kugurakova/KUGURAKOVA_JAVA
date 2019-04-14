@@ -24,10 +24,13 @@ public class Counter extends Thread {
     @Override
     public void run() {
         // TODO: считаете числа от from до to и кладете результат в sumResult.
-        lock.lock();
+
         for (int i = from; i <= to; i++) {
-            sumResult = sumResult + array[i];
+            sumResult += array[i];
+            lock.lock();
+            Main.Summa += array[i];
+            lock.unlock();
         }
-        lock.unlock();
+
     }
 }

@@ -1,16 +1,52 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 07.04.2019
-  Time: 17:12
-  To change this template use File | Settings | File Templates.
---%>
+<%--<%@ page import="ru.itpark.models.User" %>--%>
+<%--<%@ page import="java.util.List" %>--%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/css/style.css"%>
+    </style>
 </head>
 <body>
-$END$
+<div>
+    <form action="/users" method="post">
+        <input type="text" name="firstName">
+        <input type="text" name="lastName">
+        <input type="submit" value="Add">
+    </form>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <c:forEach items="${users}" var="user">
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.firstName}</td>
+                <td>${user.lastName}</td>
+            </tr>
+        </c:forEach>
+        <%--<%--%>
+        <%--List<User> users = (List<User>) request.getAttribute("users");--%>
+        <%--for (User user : users) {--%>
+        <%--%>--%>
+        <%--<tr>--%>
+        <%--<td><%=user.getId()%>--%>
+        <%--</td>--%>
+        <%--<td><%=user.getFirstName()%>--%>
+        <%--</td>--%>
+        <%--<td><%=user.getLastName()%>--%>
+        <%--</td>--%>
+        <%--</tr>--%>
+        <%--<%--%>
+        <%--}--%>
+        <%--%>--%>
+    </table>
+</div>
 </body>
 </html>

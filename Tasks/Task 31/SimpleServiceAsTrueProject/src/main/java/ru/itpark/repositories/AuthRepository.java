@@ -1,4 +1,9 @@
 package ru.itpark.repositories;
 
-public interface AuthRepository {
+import ru.itpark.models.Auth;
+
+import java.util.Optional;
+
+public interface AuthRepository extends CrudRepository<Auth> {
+    Optional<Auth> findByValue(String value);
 }
