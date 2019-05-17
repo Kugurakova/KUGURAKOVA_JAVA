@@ -19,14 +19,14 @@ public class UnloadDataController {
 @GetMapping
     public String getUnloadData(ModelMap model, ModelMap modtype){
     List<UnloadDataDto> udatas = unloaddatsService.getUnloadData();
-    model.addAttribute("udatas", udatas);
+    model.addAttribute("unloaddatas", udatas);
     return "unloaddatas";
 }
 
     @GetMapping("/{id}")
     public String edit (@PathVariable Long id, ModelMap model) {
-        UnloadData udata = unloaddatsService.getUnloadData(id);
-        model.addAttribute("udata",udata);
+        UnloadData udata = unloaddatsService.getUnloadDataById(id);
+        model.addAttribute("unloaddata",udata);
         return  "unloaddata";
     }
 

@@ -72,21 +72,21 @@
             <th>Порядок</th>
             <th>Элемент-родитель</th>
             <th>Название</th>
-            <th  hidden>Ид</th>
+            <th  >Ид</th>
             <th style="width: 5%">Edit</th>
             <th style="width: 5%">Delete</th>
     </tr>
-    <#list udatas as udatas>
-        <tr>
-            <td>${udatas.getUnloadFile().title}</td>
-            <td>${udatas.orderNum}</td>
-            <td>${udatas.dbTableNm!""}</td>
-            <td><a href="unloaddatas/${udatas.id}"> ${udatas.name}</td>
-            <td hidden>${udatas.id}</td>
-            <td><a href="unloaddatas/${udatas.id}"> &#9997;</td>
-            <td><a href="unloaddatas/${udatas.id}"> &#10006;</td>
+    <#list unloaddatas as unloaddata>
+        <tr></tr>
+            <td>${unloaddata.getUnloadFile().title}</td>
+            <td>${unloaddata.orderNum}</td>
+            <td>${unloaddata.dbTableNm!""}</td>
+            <td><a href="unloaddatas/${unloaddata.id?string.computer}"> ${unloaddata.name}</td>
+            <td>${unloaddata.id?string.computer}</td>
+            <td><a href="unloaddatas/${unloaddata.id}"> &#9997;</td>
+            <td><a href="unloaddatas/${unloaddata.id}"> &#10006;</td>
 
-        </tr>
+
     </#list>
 </table>
 </div>

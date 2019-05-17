@@ -14,7 +14,7 @@ public class UnloadDataServiceImpl implements UnloadDataService {
     @Autowired
     private UnloadDataRepository unloaddataRepository;
     @Override
-    public UnloadData getUnloadData(Long id){return unloaddataRepository.getOne(id);};
+    public UnloadData getUnloadDataById(Long id){return unloaddataRepository.getOne(id);};
 
     @Override
     public void add(UnloadData unloaddata) { unloaddataRepository.save(unloaddata);}

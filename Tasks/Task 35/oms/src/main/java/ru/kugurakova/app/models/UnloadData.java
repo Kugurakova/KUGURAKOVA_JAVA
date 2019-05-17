@@ -38,7 +38,7 @@ public class UnloadData {
     @JoinColumn(name = "unload_file_id")
     private UnloadFile unloadFile;
     @Column(name="order_num")
-    private int orderNum;
+    private Long orderNum;
     @ManyToOne
     @JoinColumn(name = "unload_column_type_id")
     private UnloadColumnType unloadColumnType;

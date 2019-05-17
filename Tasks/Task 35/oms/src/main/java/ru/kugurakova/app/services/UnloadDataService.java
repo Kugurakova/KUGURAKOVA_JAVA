@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UnloadDataService {
     List<UnloadDataDto> getUnloadData();
-    UnloadData getUnloadData(Long id);
+    UnloadData getUnloadDataById(Long id);
     void add(UnloadData unloadData);
     void save(UnloadData unloadData);
 }

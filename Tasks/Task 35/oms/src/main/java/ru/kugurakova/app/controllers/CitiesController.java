@@ -27,7 +27,7 @@ public class CitiesController {
     public String edit (@PathVariable Long id, ModelMap model) {
         City city = citiesService.getCityById(id);
         model.addAttribute("city",city);
-        return  "city";
+        return "city";
     }
 
     @PostMapping("/{id}")
