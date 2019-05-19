@@ -25,11 +25,13 @@
             dataType: "json",
             success: function(response){
                 let resultPlace = document.getElementById('datatype');
-                let resultString ='';
+                let resultString ='<option></option>';
                 for (let i = 0; i < response.length; i++){
                     var current = response[i];
+//                    if (i==1) {resultString +='<option selected  value='+current['id']+'>'+current['name']+'</option>';}
                     resultString +='<option value='+current['id']+'>'+current['name']+'</option>';
                 }
+//                document.getElementById("datatype").options[document.getElementById("datatype").selectedIndex].value;
                 resultPlace.innerHTML=resultString;
             },
             failure: function (errMsg) {
@@ -43,7 +45,7 @@
             dataType: "json",
             success: function(response){
                 let resultPlace = document.getElementById('columntype');
-                let resultString ='';
+                let resultString ='<option></option>';
                 for (let i = 0; i < response.length; i++){
                     var current = response[i];
                     resultString +='<option value='+current['id']+'>'+current['name']+'</option>';
@@ -54,6 +56,12 @@
                 alert(errMsg);
             }
         });
+    }
+    function datatypeJsCode() {
+        $.post('/unloadDataType', {
+            selected: $("#select_id").val()
+//            document.getElementById("datatype").options[document.getElementById("datatype").selectedIndex].value
+        })
     }
     function show_popap(id_popap) {
         var id = "#" + id_popap;
@@ -69,15 +77,43 @@
     <fieldset>
         <legend>ЭЛЕМЕНТ</legend>
         <form name="unloaddata" action="" method="POST">
-            Порядковый номер <input type="number" name = "orderNum" value= "${unloaddata.orderNum}" >  <br/>
-            Название элемента.атрибута <input type = "text" name = "name" value=  ${unloaddata.name} >  <br/>
+            <input type="number" name = "unloadFile" value= "${unloaddata.getUnloadFile().id}" >
+            Порядковый номер <input type="number" name = "orderNum" value= "${unloaddata.orderNum}" ><br/>
+            Название элемента.атрибута <input type = "text" name = "name" value=  ${unloaddata.name} ><br/>
             Наименование элемента.атрибута <input type = "text" name = "description" value=${unloaddata.description} >  <br/>
-
-            Тип данных<select id ="datatype"> </select>  <br/>
-
+            Тип данных
+            <select name="unloadDataType" >
+                <option> </option>
+            <#list dataTypes as dataType>
+                <option value=${dataType.id}
+                    <#if !(unloaddata.unloadDataType??) ><#elseif unloaddata.getUnloadDataType().getId() == dataType.id > selected </#if>  >
+                    ${dataType.getName()} </option>
+            </#list>
+            </select>
+            <br/>
             Длина<input type = "text" name = "length" value=${unloaddata.length} >  <br/>
             Функция выгрузки<input type = "text" name = "tableNm" value=${unloaddata.tableNm} >  <br/>
             Выгружаемое поле<input type = "text" name = "columnNm" value=${unloaddata.columnNm} >  <br/>
+            Тип элемента<select id ="columntype"> </select>  <br/>
+            Элемент-родитель<input type = "text" name = "dbTableNm" value=${unloaddata.dbTableNm} >  <br/>
+            Скрипт изменения данных
+            <input type = "text" name = "update_str" value=${unloaddata.update_str} >
+            <br/>
+            Изменять данные при загрузке реестра
+            <input type="radio" name="flUpdate" <#if unloaddata.flUpdate> checked <#else> </#if> value="true" > Да
+            <input type="radio" name="flUpdate" <#if unloaddata.flUpdate> <#else> checked </#if> value="false"> Нет
+            <br/>
+            Обязательность содержимого элемента
+            <input type = "radio" name = "need" <#if unloaddata.need> checked <#else> </#if> value="true" > Да
+            <input type = "radio" name = "need" <#if unloaddata.need> <#else> checked </#if> value="false" > Нет
+            <br/>
+            Выгружать константное значение
+            <input type = "radio" name = "flConst" <#if unloaddata.flConst> checked <#else> </#if> value="true" > Да
+            <input type = "radio" name = "flConst" <#if unloaddata.flConst> <#else> checked </#if> value="false"> Нет
+            <br/>
+            Константа<input type = "text" name = "constValue" value=${unloaddata.constValue!""} >  <br/>
+            Условие при проверке на обязательность поля<input type = "text" name = "check_text" value=${unloaddata.check_text!""} >  <br/>
+            <input type="submit" value="Сохранить" />
     </fieldset>
 </div>
 </body>

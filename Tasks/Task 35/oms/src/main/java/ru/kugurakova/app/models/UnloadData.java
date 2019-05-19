@@ -23,37 +23,37 @@ public class UnloadData {
     private String name;
     @Column(name="description",length = 512)
     private String description;
-    @Column(name="code",length = 30, nullable =false)
+    @Column(name="code",length = 30, nullable =true)
     private String code;
     @ManyToOne
-    @JoinColumn(name = "unload_data_type_id", nullable =false)
+    @JoinColumn(name = "unload_data_type_id", nullable =true)
     private UnloadDataType unloadDataType;
-    @Column(name="length",length = 20, nullable =false)
+    @Column(name="length",length = 20, nullable =true)
     private String length;
-    @Column(name="table_nm",length = 60, nullable =false)
+    @Column(name="table_nm",length = 60, nullable =true)
     private String tableNm;
-    @Column(name="column_nm",length = 60, nullable =false)
+    @Column(name="column_nm",length = 60, nullable =true)
     private String columnNm;
     @ManyToOne
     @JoinColumn(name = "unload_file_id")
     private UnloadFile unloadFile;
     @Column(name="order_num")
-    private Long orderNum;
+    private Integer orderNum;
     @ManyToOne
     @JoinColumn(name = "unload_column_type_id")
     private UnloadColumnType unloadColumnType;
     @Column(name="fl_update")
     private Boolean flUpdate;
-    @Column(name = "need",nullable = false)
+    @Column(name = "need",nullable = true)
     private Boolean need;
-    @Column(name="db_table_nm",length = 60, nullable =false)
+    @Column(name="db_table_nm",length = 60, nullable =true)
     private String dbTableNm;
-    @Column(name="updateStr", nullable =false)
+    @Column(name="updateStr", nullable =true)
     private String update_str;
-    @Column(name="checkText",length = 255, nullable =false)
+    @Column(name="checkText",length = 255, nullable =true)
     private String check_text;
     @Column(name="fl_const")
     private Boolean flConst;
-    @Column(name="const_value",length = 250, nullable =false)
+    @Column(name="const_value",length = 250, nullable =true)
     private String constValue;
 }

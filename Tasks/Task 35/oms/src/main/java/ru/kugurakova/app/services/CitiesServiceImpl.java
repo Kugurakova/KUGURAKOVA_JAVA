@@ -18,9 +18,7 @@ public class CitiesServiceImpl implements CitiesService {
         return citiesRepository.findAllByOrderByIdAsc().stream().map(CityDto::new).collect(Collectors.toList());
     }
     @Override
-    public City getCityById(Long id){
-        return citiesRepository.getOne(id);
-    }
+    public City getCityById(Long id){ return citiesRepository.getOne(id);}
 
     @Override
     public void save(City city){

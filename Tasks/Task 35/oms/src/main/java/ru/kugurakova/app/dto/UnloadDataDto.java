@@ -21,7 +21,7 @@ public class UnloadDataDto {
     private String tableNm;
     private String columnNm;
     private UnloadFile unloadFile;
-    private Long orderNum;
+    private Integer orderNum;
     private UnloadColumnType unloadColumnType;
     private Boolean flUpdate;
     private Boolean need;

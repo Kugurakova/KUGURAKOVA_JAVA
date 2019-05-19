@@ -22,7 +22,7 @@
         <legend>Регион</legend>
         <form name="city" action="" method="POST">
             Регион:<input type = "text" name="name" value= ${city.name} >    <br/>
-            ФИАС:<input type = "text" name="guid" value= ${city.guid} >    <br/>
+            <label>ФИАС:</label><input type = "text" name="guid" value= ${city.guid} >    <br/>
             <input type="submit" value="Сохранить" />
         </form>
     </fieldset>
