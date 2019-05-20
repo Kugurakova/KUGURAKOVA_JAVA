@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.kugurakova.app.dto.UnloadColumnTypeDto;
 import ru.kugurakova.app.dto.UnloadDataDto;
 import ru.kugurakova.app.dto.UnloadDataTypeDto;
-import ru.kugurakova.app.models.UnloadColumnType;
 import ru.kugurakova.app.models.UnloadData;
-import ru.kugurakova.app.models.UnloadDataType;
 import ru.kugurakova.app.services.UnloadColumnTypeService;
 import ru.kugurakova.app.services.UnloadDataService;
 import ru.kugurakova.app.services.UnloadDataTypeService;
@@ -46,7 +44,6 @@ private UnloadColumnTypeService unloadColumnTypeService;
 
     @PostMapping("/{id}")
     public String save (@PathVariable Long id, @ModelAttribute("unloaddata") UnloadData unloadData) {
-//        unloadData.setUnloadDataType(unloadDataTypeService.getUnloadDataType(Long.parseLong(dataTypeId)));
         unloaddatsService.save(unloadData);
         return  "redirect:/unloaddatas";
     }

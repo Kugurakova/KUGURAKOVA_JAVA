@@ -9,7 +9,7 @@ import ru.kugurakova.app.models.UnloadColumnType;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UnloadColumnTypeDto {
-    int id;
+    Long id;
     String name;
     public UnloadColumnTypeDto(UnloadColumnType unloadColumnType){
         this.id=unloadColumnType.getId();

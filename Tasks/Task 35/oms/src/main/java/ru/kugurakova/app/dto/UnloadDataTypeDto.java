@@ -9,7 +9,7 @@ import ru.kugurakova.app.models.UnloadDataType;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UnloadDataTypeDto {
-    int id;
+    Long id;
     String name;
 
     public UnloadDataTypeDto(UnloadDataType unloadDataType){

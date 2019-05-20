@@ -9,7 +9,7 @@ import ru.kugurakova.app.models.UnloadPackageType;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UnloadPackageTypeDto {
-    private int id;
+    private Long id;
     private String name;
     public UnloadPackageTypeDto(UnloadPackageType unloadPackageType){
         this.id=unloadPackageType.getId();

@@ -17,7 +17,7 @@ import java.util.List;
 public class UnloadColumnType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     @OneToMany(mappedBy = "unloadColumnType")
     private List<UnloadData> unloadData;

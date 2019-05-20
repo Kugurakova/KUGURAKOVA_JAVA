@@ -4,8 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.kugurakova.app.models.UnloadFile;
-import ru.kugurakova.app.services.UnloadDataServiceImpl;
+import ru.kugurakova.app.dto.UnloadFileDto;
 import ru.kugurakova.app.services.UnloadFileService;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class UnloadFileController {
     private UnloadFileService unloadFileService;
 @GetMapping
     public String getUnloadFilePage(ModelMap model){
-    List<UnloadFile> files = unloadFileService.getUnloadFiles();
+    List<UnloadFileDto> files = unloadFileService.getUnloadFiles();
     model.addAttribute("files",files);
     return "unloadfile";
 }

@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.kugurakova.app.dto.UnloadColumnTypeDto;
-import ru.kugurakova.app.models.UnloadColumnType;
 import ru.kugurakova.app.services.UnloadColumnTypeService;
 
 import java.util.List;

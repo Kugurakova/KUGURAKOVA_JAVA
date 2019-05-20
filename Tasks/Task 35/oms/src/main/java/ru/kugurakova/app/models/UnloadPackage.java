@@ -35,7 +35,7 @@ public class UnloadPackage {
     @JoinColumn(name = "unload_package_type_id")
     private UnloadPackageType unloadPackageType;
     @Column(name="order_num",length = 10)
-    private int orderNum;
+    private Long orderNum;
     @Column(name="start_date")
     private LocalDateTime startDate;
     @Column(name="end_date",nullable = false )

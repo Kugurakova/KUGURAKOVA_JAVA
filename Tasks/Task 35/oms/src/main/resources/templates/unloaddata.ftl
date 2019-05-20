@@ -28,10 +28,8 @@
                 let resultString ='<option></option>';
                 for (let i = 0; i < response.length; i++){
                     var current = response[i];
-//                    if (i==1) {resultString +='<option selected  value='+current['id']+'>'+current['name']+'</option>';}
                     resultString +='<option value='+current['id']+'>'+current['name']+'</option>';
                 }
-//                document.getElementById("datatype").options[document.getElementById("datatype").selectedIndex].value;
                 resultPlace.innerHTML=resultString;
             },
             failure: function (errMsg) {
@@ -57,27 +55,14 @@
             }
         });
     }
-    function datatypeJsCode() {
-        $.post('/unloadDataType', {
-            selected: $("#select_id").val()
-//            document.getElementById("datatype").options[document.getElementById("datatype").selectedIndex].value
-        })
-    }
-    function show_popap(id_popap) {
-        var id = "#" + id_popap;
-        $(id).addClass('active');
-    }
 
-    $(".close_popap").click( function(){
-        $(".overlay").removeClass("active");
-    });
 </script>
 <body  onload="getDists();">
 <div>
     <fieldset>
         <legend>ЭЛЕМЕНТ</legend>
         <form name="unloaddata" action="" method="POST">
-            <input type="number" name = "unloadFile" value= "${unloaddata.getUnloadFile().id}" >
+            <input hidden type="number" name = "unloadFile" value= "${unloaddata.getUnloadFile().id}" >
             Порядковый номер <input type="number" name = "orderNum" value= "${unloaddata.orderNum}" ><br/>
             Название элемента.атрибута <input type = "text" name = "name" value=  ${unloaddata.name} ><br/>
             Наименование элемента.атрибута <input type = "text" name = "description" value=${unloaddata.description} >  <br/>
@@ -94,7 +79,15 @@
             Длина<input type = "text" name = "length" value=${unloaddata.length} >  <br/>
             Функция выгрузки<input type = "text" name = "tableNm" value=${unloaddata.tableNm} >  <br/>
             Выгружаемое поле<input type = "text" name = "columnNm" value=${unloaddata.columnNm} >  <br/>
-            Тип элемента<select id ="columntype"> </select>  <br/>
+            Тип элемента
+            <select name ="unloadColumnType">
+            <#list columnTypes as columnType>
+                <option value=${columnType.id}
+                    <#if !(unloaddata.unloadColumnType??) ><#elseif unloaddata.getUnloadColumnType().getId() == columnType.id > selected </#if>  >
+                    ${columnType.getName()} </option>
+            </#list>
+            </select>
+            <br/>
             Элемент-родитель<input type = "text" name = "dbTableNm" value=${unloaddata.dbTableNm} >  <br/>
             Скрипт изменения данных
             <input type = "text" name = "update_str" value=${unloaddata.update_str} >

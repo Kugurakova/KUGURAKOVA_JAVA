@@ -6,9 +6,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.kugurakova.app.dto.UnloadDataDto;
-import ru.kugurakova.app.models.UnloadData;
-import ru.kugurakova.app.models.UnloadFile;
-import ru.kugurakova.app.models.UnloadPackage;
+import ru.kugurakova.app.dto.UnloadFileDto;
+import ru.kugurakova.app.dto.UnloadPackageDto;
 import ru.kugurakova.app.services.UnloadDataService;
 import ru.kugurakova.app.services.UnloadFileService;
 import ru.kugurakova.app.services.UnloadPackageService;
@@ -27,9 +26,9 @@ public class UnloadPackageController {
 
     @GetMapping
     public String getUnloadPackagePage(ModelMap model,ModelMap model2,ModelMap model3 ){
-        List<UnloadPackage> packages = unloadPackageService.getUnloadPackages();
+        List<UnloadPackageDto> packages = unloadPackageService.getUnloadPackages();
         model.addAttribute("packages",packages);
-        List<UnloadFile> files = unloadFileService.getUnloadFiles();
+        List<UnloadFileDto> files = unloadFileService.getUnloadFiles();
         model2.addAttribute("files", files);
         List<UnloadDataDto> udata = unloadDataService.getUnloadData();
         model3.addAttribute("udata", udata);
