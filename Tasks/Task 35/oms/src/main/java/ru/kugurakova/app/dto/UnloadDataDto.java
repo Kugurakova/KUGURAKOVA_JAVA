@@ -26,8 +26,8 @@ public class UnloadDataDto {
     private Boolean flUpdate;
     private Boolean need;
     private String dbTableNm;
-    private String update_str;
-    private String check_text;
+    private String updateStr;
+    private String checkText;
     private Boolean flConst;
     private String constValue;
 
@@ -46,8 +46,8 @@ public class UnloadDataDto {
         this.flUpdate=unloadData.getFlUpdate();
         this.need=unloadData.getNeed();
         this.dbTableNm=unloadData.getDbTableNm();
-        this.update_str=unloadData.getUpdate_str();
-        this.check_text=unloadData.getCheck_text();
+        this.updateStr=unloadData.getUpdateStr();
+        this.checkText=unloadData.getCheckText();
         this.flConst=unloadData.getFlConst();
         this.constValue=unloadData.getConstValue();
     }

@@ -48,10 +48,10 @@ public class UnloadData {
     private Boolean need;
     @Column(name="db_table_nm",length = 60, nullable =true)
     private String dbTableNm;
-    @Column(name="updateStr", nullable =true)
-    private String update_str;
-    @Column(name="checkText",length = 255, nullable =true)
-    private String check_text;
+    @Column(name="update_str", nullable =true)
+    private String updateStr;
+    @Column(name="check_text",length = 255, nullable =true)
+    private String checkText;
     @Column(name="fl_const")
     private Boolean flConst;
     @Column(name="const_value",length = 250, nullable =true)

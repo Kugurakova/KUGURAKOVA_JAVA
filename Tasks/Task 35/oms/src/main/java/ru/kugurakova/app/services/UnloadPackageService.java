@@ -6,5 +6,8 @@ import java.util.List;
 
 public interface UnloadPackageService {
     List<UnloadPackageDto> getUnloadPackages();
-    void add (UnloadPackage unload_package);
+    UnloadPackage getUnloadPackageById(Long id);
+    void add (UnloadPackage unloadPackage);
+    void save(UnloadPackage unloadPackage);
+
 }

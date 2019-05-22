@@ -20,4 +20,11 @@ public class UnloadPackageServiceImpl implements UnloadPackageService  {
     @Override
     public List<UnloadPackageDto> getUnloadPackages(){  return unloadPackageRepository.findAll().stream().map(UnloadPackageDto::new).collect(Collectors.toList());}
 
+    @Override
+    public UnloadPackage getUnloadPackageById(Long id){return  unloadPackageRepository.getOne(id);}
+
+    @Override
+    public void save(UnloadPackage unloadPackage){unloadPackageRepository.save(unloadPackage);}
+
+
 }

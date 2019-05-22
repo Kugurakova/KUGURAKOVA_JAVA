@@ -7,7 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .overflow {
+        .overflow1 {
+            overflow: scroll;
+            width: 100%;
+            height: 150px;
+            border: 1px solid black;
+        }
+        .overflow2 {
+            overflow: scroll;
+            width: 100%;
+            height: 150px;
+            border: 1px solid black;
+        }
+        .overflow3 {
             overflow: scroll;
             width: 50%;
             height: 300px;
@@ -21,8 +33,8 @@
 </head>
 <body>
 <script src="alert.js"></script>
-<div>
 <h3>ПАКЕТЫ ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ</h3>
+<div class="overflow1">
 <table class="table">
             <tr>
                 <th>Город</th>
@@ -39,7 +51,7 @@
         <#list packages as packages>
             <tr>
                 <td>${packages.getCity().name}</td>
-                <td>${packages.name}</td>
+                <td><a href="unloadpackages/${packages.id?string.computer}"> ${packages.name}</td>
                 <td>${packages.code}</td>
                 <td>${packages.getUnloadPackageType().name}</td>
                 <td>${packages.zipCommand}</td>
@@ -47,24 +59,13 @@
                 <td>${packages.archiveFormat}</td>
                 <td>${packages.startDate!""}</td>
                 <td>${packages.endDate!""}</td>
-                <td><input type="submit" value="Изменить"</td>
+                <td><input type="submit" value="Копировать"</td>
             </tr>
         </#list>
 </table>
 </div>
-<div>
-    <form >
-        Наименование: <input type = "text"  name = "name" width="300"> <br>
-        Нач.символы имени: <input type = "text" name = "code"  width="100">
-        Тип пакета: <input type = "text" name = "unload_package_type_id" width="200"> <br>
-        Команда для архивирования: <input type = "text" name = "zip_command">
-        разахивирования: <input type = "text" name = "unzip_command">
-        Формат архива: <input type = "text" name = "archive_format"> <br>
-        <input type="submit" value="Найти">
-    </form>
-</div>
-<div>
-    <h3>ФАЙЛЫ ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ</h3>
+<h3>ФАЙЛЫ ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ</h3>
+<div id="unload_file_table" class="overflow2">
     <table class="table">
             <tr>
                 <th>Пакет</th>
@@ -91,7 +92,7 @@
     </table>
 </div>
 <h3>ЭЛЕМЕНТЫ/АТРИБУТЫ В ФАЙЛЕ ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ</h3>
-<div id="unload_data_table" class="overflow">
+<div id="unload_data_table" class="overflow3">
     <table class="table">
         <tr>
             <th>Файл</th>
@@ -105,8 +106,8 @@
             <td>${udata.getUnloadFile().title}</td>
             <td>${udata.orderNum}</td>
             <td>${udata.dbTableNm!""}</td>
-            <td>${udata.name}</td>
-            <td>${udata.id}</td>
+            <td><a href="unloaddatas/${udata.id?string.computer}"> ${udata.name}</td>
+            <td>${udata.id?string.computer}</td>
         </tr>
     </#list>
     </table>

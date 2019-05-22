@@ -45,6 +45,6 @@ private UnloadColumnTypeService unloadColumnTypeService;
     @PostMapping("/{id}")
     public String save (@PathVariable Long id, @ModelAttribute("unloaddata") UnloadData unloadData) {
         unloaddatsService.save(unloadData);
-        return  "redirect:/unloaddatas";
+        return  "redirect:/unloadpackages";
     }
 }
