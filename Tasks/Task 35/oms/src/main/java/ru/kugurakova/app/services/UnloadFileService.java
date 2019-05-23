@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface UnloadFileService {
 List<UnloadFileDto> getUnloadFiles();
-void add (UnloadFile unloadFile);
+UnloadFile getUnloadFileById(Long id);
+    void save (UnloadFile unloadFile);
+    void add (UnloadFile unloadFile);
 }
 

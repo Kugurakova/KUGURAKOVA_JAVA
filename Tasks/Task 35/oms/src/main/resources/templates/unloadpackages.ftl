@@ -52,11 +52,11 @@
             <tr>
                 <td>${packages.getCity().name}</td>
                 <td><a href="unloadpackages/${packages.id?string.computer}"> ${packages.name}</td>
-                <td>${packages.code}</td>
+                <td>${packages.code!""}</td>
                 <td>${packages.getUnloadPackageType().name}</td>
-                <td>${packages.zipCommand}</td>
-                <td>${packages.unzipCommand}</td>
-                <td>${packages.archiveFormat}</td>
+                <td>${packages.zipCommand!""}</td>
+                <td>${packages.unzipCommand!""}</td>
+                <td>${packages.archiveFormat!""}</td>
                 <td>${packages.startDate!""}</td>
                 <td>${packages.endDate!""}</td>
                 <td><input type="submit" value="Копировать"</td>
@@ -80,13 +80,13 @@
         <#list files as files>
             <tr>
                 <td>${files.getUnloadPackage().name}</td>
-                <td>${files.title}</td>
-                <td>${files.code}</td>
-                <td>${files.name}</td>
+                <td><a href="unloadfiles/${files.id?string.computer}"> ${files.title}</td>
+                <td>${files.code!""}</td>
+                <td>${files.name!""}</td>
                 <td><#if files.flMain>Да<#else>Нет</#if></td>
-                <td>${files.fileType}</td>
-                <td>${files.codePage}</td>
-                <td>${files.version}</td>
+                <td>${files.fileType!""}</td>
+                <td>${files.codePage!""}</td>
+                <td>${files.version!""}</td>
             </tr>
         </#list>
     </table>

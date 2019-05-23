@@ -1,6 +1,7 @@
 package ru.kugurakova.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,8 @@ import ru.kugurakova.app.services.UnloadFileService;
 import ru.kugurakova.app.services.UnloadPackageService;
 import ru.kugurakova.app.services.UnloadPackageTypeService;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -48,7 +51,11 @@ public class UnloadPackageController {
         return  "unloadpackage";
     }
     @PostMapping("/{id}")
-    public String save (@PathVariable Long id, @ModelAttribute("unloadpackage") UnloadPackage unloadPackage) {
+    public String save (@PathVariable Long id, @ModelAttribute("unloadpackage") UnloadPackage unloadPackage,
+                        @RequestParam(value="start") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
+                        @RequestParam(value="end") @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") LocalDateTime endDate) {
+        unloadPackage.setStartDate(start);
+        unloadPackage.setEndDate(endDate);
         unloadPackageService.save(unloadPackage);
         return  "redirect:/unloadpackages";
     }

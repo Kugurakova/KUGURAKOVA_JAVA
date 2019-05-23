@@ -68,7 +68,7 @@
                 <tr><td>Название элемента.атрибута</td>
                     <td> <input type = "text" name = "name" value=  ${unloaddata.name} ></td></tr>
                 <tr><td>Наименование элемента.атрибута</td>
-                    <td><input type = "text" name = "description" value=${unloaddata.description} ></td></tr>
+                    <td><input type = "text" name = "description" value="${unloaddata.description}" ></td></tr>
                 <tr><td>Тип данных</td>
                     <td><select name="unloadDataType" >
                             <option> </option>
