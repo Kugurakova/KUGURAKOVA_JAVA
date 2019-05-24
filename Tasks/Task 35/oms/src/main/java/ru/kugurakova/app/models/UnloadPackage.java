@@ -1,9 +1,11 @@
 package ru.kugurakova.app.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -36,6 +38,12 @@ public class UnloadPackage {
     private UnloadPackageType unloadPackageType;
     @Column(name="order_num",length = 10)
     private Long orderNum;
+@JsonFormat(pattern = "yyyy-MM-ddThh:mm"
+//                      "yyyy-MM-dd HH:mm:ss"
+)
+@DateTimeFormat(pattern = "yyyy-MM-ddThh:mm"
+//        "yyyy-MM-dd HH:mm:ss"
+)
     @Column(name="start_date")
     private LocalDateTime startDate;
     @Column(name="end_date",nullable = false )

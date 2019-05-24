@@ -35,58 +35,58 @@
 <script src="alert.js"></script>
 <h3>ПАКЕТЫ ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ</h3>
 <div class="overflow1">
-<table class="table">
-            <tr>
-                <th>Город</th>
-                <th>Наименование</th>
-                <th>Нач.символы имени</th>
-                <th>Тип пакета</th>
-                <th>Команда для архивирования</th>
-                <th>разахивирования</th>
-                <th>Формат архива</th>
-                <th>Дата начала действия</th>
-                <th>Дата окончания действия</th>
-                <th>Действия</th>
-            </tr>
+    <table class="table">
+        <tr>
+            <th>Город</th>
+            <th>Наименование</th>
+            <th>Нач.символы имени</th>
+            <th>Тип пакета</th>
+            <th>Команда для архивирования</th>
+            <th>разахивирования</th>
+            <th>Формат архива</th>
+            <th>Дата начала действия</th>
+            <th>Дата окончания действия</th>
+            <th>Действия</th>
+        </tr>
         <#list packages as packages>
             <tr>
                 <td>${packages.getCity().name}</td>
                 <td><a href="unloadpackages/${packages.id?string.computer}"> ${packages.name}</td>
-                <td>${packages.code!""}</td>
+                <td>${packages.code}</td>
                 <td>${packages.getUnloadPackageType().name}</td>
-                <td>${packages.zipCommand!""}</td>
-                <td>${packages.unzipCommand!""}</td>
-                <td>${packages.archiveFormat!""}</td>
+                <td>${packages.zipCommand}</td>
+                <td>${packages.unzipCommand}</td>
+                <td>${packages.archiveFormat}</td>
                 <td>${packages.startDate!""}</td>
                 <td>${packages.endDate!""}</td>
                 <td><input type="submit" value="Копировать"</td>
             </tr>
         </#list>
-</table>
+    </table>
 </div>
 <h3>ФАЙЛЫ ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ</h3>
 <div id="unload_file_table" class="overflow2">
     <table class="table">
-            <tr>
-                <th>Пакет</th>
-                <th>Наименование</th>
-                <th>Нач.символы имени файла</th>
-                <th>Название файла</th>
-                <th>Основной файл</th>
-                <th>Тип файла</th>
-                <th>Кодовая страница</th>
-                <th>Версия</th>
-            </tr>
+        <tr>
+            <th>Пакет</th>
+            <th>Наименование</th>
+            <th>Нач.символы имени файла</th>
+            <th>Название файла</th>
+            <th>Основной файл</th>
+            <th>Тип файла</th>
+            <th>Кодовая страница</th>
+            <th>Версия</th>
+        </tr>
         <#list files as files>
             <tr>
                 <td>${files.getUnloadPackage().name}</td>
-                <td><a href="unloadfiles/${files.id?string.computer}"> ${files.title}</td>
-                <td>${files.code!""}</td>
-                <td>${files.name!""}</td>
+                <td>${files.title}</td>
+                <td>${files.code}</td>
+                <td>${files.name}</td>
                 <td><#if files.flMain>Да<#else>Нет</#if></td>
-                <td>${files.fileType!""}</td>
-                <td>${files.codePage!""}</td>
-                <td>${files.version!""}</td>
+                <td>${files.fileType}</td>
+                <td>${files.codePage}</td>
+                <td>${files.version}</td>
             </tr>
         </#list>
     </table>

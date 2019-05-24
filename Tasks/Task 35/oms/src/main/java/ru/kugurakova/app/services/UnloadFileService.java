@@ -5,9 +5,6 @@ import ru.kugurakova.app.models.UnloadFile;
 import java.util.List;
 
 public interface UnloadFileService {
-List<UnloadFileDto> getUnloadFiles();
-UnloadFile getUnloadFileById(Long id);
-    void save (UnloadFile unloadFile);
+    List<UnloadFileDto> getUnloadFiles();
     void add (UnloadFile unloadFile);
 }
-

@@ -17,11 +17,5 @@ public class UnloadFileServiceImpl implements UnloadFileService {
     public void add(UnloadFile unloadFile){unloadFileRepository.save(unloadFile);}
 
     @Override
-    public void save (UnloadFile unloadFile){unloadFileRepository.save(unloadFile);};
-
-    @Override
-    public UnloadFile getUnloadFileById(Long id){ return unloadFileRepository.getOne(id);}
-
-    @Override
     public List<UnloadFileDto> getUnloadFiles(){ return unloadFileRepository.findAll().stream().map(UnloadFileDto::new).collect(Collectors.toList());}
 }
