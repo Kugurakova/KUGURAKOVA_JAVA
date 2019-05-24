@@ -11,14 +11,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/unloadfiles")
 public class UnloadFileController {
-@Autowired
+    @Autowired
     private UnloadFileService unloadFileService;
-@GetMapping
+    @GetMapping
     public String getUnloadFilePage(ModelMap model) {
-    List<UnloadFileDto> files = unloadFileService.getUnloadFiles();
-    model.addAttribute("files", files);
-    return "unloadfiles";
-}
+        List<UnloadFileDto> files = unloadFileService.getUnloadFiles();
+        model.addAttribute("files", files);
+        return "unloadfiles";
+    }
 
     @GetMapping("/{id}")
     public String edit(@PathVariable Long id, ModelMap model) {

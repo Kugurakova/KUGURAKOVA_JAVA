@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import ru.kugurakova.app.dto.UnloadColumnTypeDto;
 import ru.kugurakova.app.dto.UnloadDataDto;
 import ru.kugurakova.app.dto.UnloadDataTypeDto;
+import ru.kugurakova.app.models.UnloadColumnType;
 import ru.kugurakova.app.models.UnloadData;
+import ru.kugurakova.app.models.UnloadDataType;
 import ru.kugurakova.app.services.UnloadColumnTypeService;
 import ru.kugurakova.app.services.UnloadDataService;
 import ru.kugurakova.app.services.UnloadDataTypeService;
@@ -17,41 +19,42 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/unloaddatas")
 public class UnloadDataController {
-@Autowired
-private UnloadDataService unloaddatsService;
-@Autowired
-private UnloadDataTypeService unloadDataTypeService;
-@Autowired
-private UnloadColumnTypeService unloadColumnTypeService;
-    private UnloadDataController unloadDataService;
+    @Autowired
+    private UnloadDataService unloadDataService;
+    @Autowired
+    private UnloadDataTypeService unloadDataTypeService;
+    @Autowired
+    private UnloadColumnTypeService unloadColumnTypeService;
 
     @GetMapping
-    public String getUnloadData(ModelMap model, ModelMap modtype){
-    List<UnloadDataDto> udatas = unloaddatsService.getUnloadData();
-    model.addAttribute("unloaddatas", udatas);
-    return "unloaddatas";
-}
+    public String getUnloadData(ModelMap model, ModelMap modtype) {
+        List<UnloadDataDto> udatas = unloadDataService.getUnloadData();
+        model.addAttribute("unloaddatas", udatas);
+        return "unloaddatas";
+    }
 
     @GetMapping("/{id}")
-    public String edit (@PathVariable Long id, ModelMap model,ModelMap model2,ModelMap model3 ) {
-        UnloadData udata = unloaddatsService.getUnloadDataById(id);
-        model.addAttribute("unloaddata",udata);
+    public String edit(@PathVariable Long id, ModelMap model, ModelMap model2, ModelMap model3) {
+        UnloadData udata = unloadDataService.getUnloadDataById(id);
+        model.addAttribute("unloaddata", udata);
         List<UnloadDataTypeDto> dataTypeDtos = unloadDataTypeService.getUnloadDataTypes();
-        model2.addAttribute("dataTypes",dataTypeDtos);
+        model2.addAttribute("dataTypes", dataTypeDtos);
         List<UnloadColumnTypeDto> columnTypeDtos = unloadColumnTypeService.getUnloadColumnTypes();
-        model3.addAttribute("columnTypes",columnTypeDtos);
-        return  "unloaddata";
+        model3.addAttribute("columnTypes", columnTypeDtos);
+        return "unloaddata";
     }
 
     @PostMapping("/{id}")
-    public String save (@PathVariable Long id, @ModelAttribute("unloaddata") UnloadData unloadData) {
-        unloaddatsService.save(unloadData);
-        return  "redirect:/unloadpackages";
+    public String save(@PathVariable Long id, @ModelAttribute("unloaddata") UnloadData unloadData) {
+//        unloadData.setUnloadDataType(unloadDataTypeService.getUnloadDataType(Long.parseLong(dataTypeId)));
+        unloadDataService.save(unloadData);
+        return "redirect:/unloadpackages";
     }
 
     @PostMapping("/copy/{id}")
-    public String copy (@PathVariable Long id) {
+    public String copy(@PathVariable Long id) {
         unloadDataService.copy(id);
-        return  "redirect:/unloadpackages";
+        return "redirect:/unloadpackages";
+    }
 }
-}
+

@@ -25,17 +25,17 @@ public class UnloadPackageDto {
     private CityDto city;
 
     public UnloadPackageDto(UnloadPackage unloadPackage) {
-    this.id = unloadPackage.getId();
-    this.name = unloadPackage.getName();
-    this.description = unloadPackage.getDescription();
-    this.code = unloadPackage.getCode();
-    this.zipCommand = unloadPackage.getZipCommand();
-    this.unzipCommand = unloadPackage.getUnzipCommand();
-    this.archiveFormat = unloadPackage.getArchiveFormat();
-    this.unloadPackageType = unloadPackage.getUnloadPackageType() == null ? null : new UnloadPackageTypeDto(unloadPackage.getUnloadPackageType());
-    this.orderNum = unloadPackage.getOrderNum();
-    this.startDate = unloadPackage.getStartDate();
-    this.endDate = unloadPackage.getEndDate();
-    this.city = unloadPackage.getCity() == null ? null : new CityDto(unloadPackage.getCity());
-}
+        this.id = unloadPackage.getId();
+        this.name = unloadPackage.getName();
+        this.description = unloadPackage.getDescription();
+        this.code = unloadPackage.getCode();
+        this.zipCommand = unloadPackage.getZipCommand();
+        this.unzipCommand = unloadPackage.getUnzipCommand();
+        this.archiveFormat = unloadPackage.getArchiveFormat();
+        this.unloadPackageType = unloadPackage.getUnloadPackageType() == null ? null : new UnloadPackageTypeDto(unloadPackage.getUnloadPackageType());
+        this.orderNum = unloadPackage.getOrderNum();
+        this.startDate = unloadPackage.getStartDate();
+        this.endDate = unloadPackage.getEndDate();
+        this.city = unloadPackage.getCity() == null ? null : new CityDto(unloadPackage.getCity());
+    }
 }

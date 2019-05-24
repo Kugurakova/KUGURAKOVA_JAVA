@@ -18,15 +18,15 @@ public class UnloadFileDto {
     private UnloadPackageDto unloadPackage;
     private Boolean flMain;
     private String codePage;
-public UnloadFileDto(UnloadFile unloadFile){
-    this.id = unloadFile.getId();
-    this.name = unloadFile.getName();
-    this.title = unloadFile.getTitle();
-    this.code = unloadFile.getCode();
-    this.version = unloadFile.getVersion();
-    this.fileType = unloadFile.getFileType();
-    this.unloadPackage = unloadFile.getUnloadPackage() == null ? null : new UnloadPackageDto(unloadFile.getUnloadPackage());
-    this.flMain = unloadFile.getFlMain();
-    this.codePage = unloadFile.getCodePage();
-}
+    public UnloadFileDto(UnloadFile unloadFile){
+        this.id = unloadFile.getId();
+        this.name = unloadFile.getName();
+        this.title = unloadFile.getTitle();
+        this.code = unloadFile.getCode();
+        this.version = unloadFile.getVersion();
+        this.fileType = unloadFile.getFileType();
+        this.unloadPackage = unloadFile.getUnloadPackage() == null ? null : new UnloadPackageDto(unloadFile.getUnloadPackage());
+        this.flMain = unloadFile.getFlMain();
+        this.codePage = unloadFile.getCodePage();
+    }
 }

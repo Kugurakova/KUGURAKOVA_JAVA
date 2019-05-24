@@ -16,7 +16,7 @@ public class UnloadDataTypeServiceImpl implements UnloadDataTypeService {
 
     @Override
     public List<UnloadDataTypeDto> getUnloadDataTypes(){
-    return unloadDataTypeRepository.findAllByOrderByIdAsc().stream().map(UnloadDataTypeDto::new).collect(Collectors.toList());
+        return unloadDataTypeRepository.findAllByOrderByIdAsc().stream().map(UnloadDataTypeDto::new).collect(Collectors.toList());
     }
 
     @Override

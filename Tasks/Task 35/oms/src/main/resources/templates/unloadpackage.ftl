@@ -18,7 +18,7 @@
         <legend>ПАКЕТ</legend>
         <form name="unloadpackage" action="" method="POST">
             <table>
-                <tr><td>Наименование</td><td><input type = "text" name = "name" size="50" value="${unloadpackage.name}" ></td></tr>
+                <tr><td>Наименование</td><td><input type = "text" name = "name" size="60" value="${unloadpackage.name}" ></td></tr>
                 <tr><td>Тип пакета</td>
                     <td><select name ="unloadPackageType">
                         <option> </option>
@@ -37,6 +37,7 @@
                 <tr><td><input hidden type="number" name = "city" value= "${unloadpackage.getCity().id}" ></td><td><input type="submit" value="Сохранить"></td></tr>
             </table>
         </form>
+    </fieldset>
 </div>
 </body>
 </html>
