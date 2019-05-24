@@ -10,12 +10,12 @@
             integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
             crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="styles.css" />
-    <title>ПАКЕТ</title>
+    <title>ФАЙЛ</title>
 </head>
 <body>
 <div>
     <fieldset>
-        <legend>ПАКЕТ</legend>
+        <legend>ФАЙЛ</legend>
         <form name="unloadfile" action="" method="POST">
             <table>
                 <tr><td>Наименование файла</td>

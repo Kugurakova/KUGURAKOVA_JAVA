@@ -32,8 +32,8 @@
                 <tr><td>Команда для архивирования</td><td><input type = "text" name = "zipCommand" value="${unloadpackage.zipCommand!""}"></td></tr>
                 <tr><td>разахивирования</td><td><input type = "text" name = "unzipCommand" value="${unloadpackage.unzipCommand!""}"></td></tr>
                 <tr><td>Формат архива</td><td><input type = "text" name = "archiveFormat" size="30" value="${unloadpackage.archiveFormat!""}"></td></tr>
-                <tr><td>Дата начало</td><td><input type = "datetime-local" name="start" size="20" value=${unloadpackage.startDate!""}></td></tr>
-                <tr><td>Дата окончания</td><td><input type = "datetime-local" name="end" size="20" value=${unloadpackage.endDate!""}></td></tr>
+                <tr><td>Дата начало</td><td><input type = "datetime-local" name="startDate" size="20" value=${unloadpackage.startDate!""}></td></tr>
+                <tr><td>Дата окончания</td><td><input type = "datetime-local" name="endDate" size="20" value=${unloadpackage.endDate!""}></td></tr>
                 <tr><td><input hidden type="number" name = "city" value= "${unloadpackage.getCity().id}" ></td><td><input type="submit" value="Сохранить"></td></tr>
             </table>
         </form>

@@ -41,11 +41,11 @@
                 <th>Наименование</th>
                 <th>Нач.символы имени</th>
                 <th>Тип пакета</th>
-                <th>Команда для архивирования</th>
-                <th>разахивирования</th>
-                <th>Формат архива</th>
+                <th hidden>Команда для архивирования</th>
+                <th hidden>разахивирования</th>
+                <th hidden>Формат архива</th>
                 <th>Дата начала действия</th>
-                <th>Дата окончания действия</th>
+                <th hidden>Дата окончания действия</th>
                 <th>Действия</th>
             </tr>
         <#list packages as packages>
@@ -54,11 +54,11 @@
                 <td><a href="unloadpackages/${packages.id?string.computer}"> ${packages.name}</td>
                 <td>${packages.code!""}</td>
                 <td>${packages.getUnloadPackageType().name}</td>
-                <td>${packages.zipCommand!""}</td>
-                <td>${packages.unzipCommand!""}</td>
-                <td>${packages.archiveFormat!""}</td>
+                <td hidden>${packages.zipCommand!""}</td>
+                <td hidden>${packages.unzipCommand!""}</td>
+                <td hidden>${packages.archiveFormat!""}</td>
                 <td>${packages.startDate!""}</td>
-                <td>${packages.endDate!""}</td>
+                <td hidden>${packages.endDate!""}</td>
                 <td><input type="submit" value="Копировать"</td>
             </tr>
         </#list>

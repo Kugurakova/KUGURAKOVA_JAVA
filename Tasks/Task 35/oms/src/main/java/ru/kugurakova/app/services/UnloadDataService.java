@@ -9,4 +9,5 @@ public interface UnloadDataService {
     UnloadData getUnloadDataById(Long id);
     void add(UnloadData unloadData);
     void save(UnloadData unloadData);
+    void copy(Long id);
 }

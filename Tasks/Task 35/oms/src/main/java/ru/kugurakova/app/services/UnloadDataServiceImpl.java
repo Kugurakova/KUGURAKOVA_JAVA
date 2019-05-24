@@ -25,8 +25,13 @@ public class UnloadDataServiceImpl implements UnloadDataService {
 
     @Override
     public List<UnloadDataDto> getUnloadData(){
-        return unloaddataRepository.findAllByOrderByUnloadFileAscOrderNumAsc().stream().map(UnloadDataDto::new).collect(Collectors.toList());
+        return unloaddataRepository.findAllByOrderByUnloadFileAscOrderNumAsc().stream().map(UnloadDataDto::new).collect(Collectors.toList());}
+
+    @Override
+    public void copy(Long id){
+        UnloadData unloadData = new UnloadData();
 
     }
+
 
 }

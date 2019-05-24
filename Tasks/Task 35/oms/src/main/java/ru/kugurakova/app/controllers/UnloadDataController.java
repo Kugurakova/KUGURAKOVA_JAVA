@@ -23,8 +23,9 @@ private UnloadDataService unloaddatsService;
 private UnloadDataTypeService unloadDataTypeService;
 @Autowired
 private UnloadColumnTypeService unloadColumnTypeService;
+    private UnloadDataController unloadDataService;
 
-@GetMapping
+    @GetMapping
     public String getUnloadData(ModelMap model, ModelMap modtype){
     List<UnloadDataDto> udatas = unloaddatsService.getUnloadData();
     model.addAttribute("unloaddatas", udatas);
@@ -47,4 +48,10 @@ private UnloadColumnTypeService unloadColumnTypeService;
         unloaddatsService.save(unloadData);
         return  "redirect:/unloadpackages";
     }
+
+    @PostMapping("/copy/{id}")
+    public String copy (@PathVariable Long id) {
+        unloadDataService.copy(id);
+        return  "redirect:/unloadpackages";
+}
 }

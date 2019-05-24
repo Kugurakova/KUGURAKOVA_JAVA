@@ -50,12 +50,9 @@ public class UnloadPackageController {
         model2.addAttribute("packagetypes",unloadPackageTypeDtos);
         return  "unloadpackage";
     }
+
     @PostMapping("/{id}")
-    public String save (@PathVariable Long id, @ModelAttribute("unloadpackage") UnloadPackage unloadPackage,
-                        @RequestParam(value="start") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
-                        @RequestParam(value="end") @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") LocalDateTime endDate) {
-        unloadPackage.setStartDate(start);
-        unloadPackage.setEndDate(endDate);
+    public String save(@PathVariable Long id, @ModelAttribute("unloadpackage") UnloadPackage unloadPackage) {
         unloadPackageService.save(unloadPackage);
         return  "redirect:/unloadpackages";
     }
