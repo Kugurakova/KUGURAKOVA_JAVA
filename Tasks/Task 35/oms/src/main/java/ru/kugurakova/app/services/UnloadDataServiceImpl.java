@@ -29,7 +29,26 @@ public class UnloadDataServiceImpl implements UnloadDataService {
 
     @Override
     public void copy(Long id){
-        UnloadData unloadData = new UnloadData();
+        UnloadData unloadData = UnloadData.builder()
+                .name(unloaddataRepository.getOne(id).getName())
+                .description(unloaddataRepository.getOne(id).getDescription())
+                .code(unloaddataRepository.getOne(id).getCode())
+                .unloadDataType(unloaddataRepository.getOne(id).getUnloadDataType())
+                .length(unloaddataRepository.getOne(id).getLength())
+                .tableNm(unloaddataRepository.getOne(id).getTableNm())
+                .columnNm(unloaddataRepository.getOne(id).getColumnNm())
+                .unloadFile(unloaddataRepository.getOne(id).getUnloadFile())
+                .orderNum(unloaddataRepository.getOne(id).getOrderNum())
+                .unloadColumnType(unloaddataRepository.getOne(id).getUnloadColumnType())
+                .flUpdate(unloaddataRepository.getOne(id).getFlUpdate())
+                .need(unloaddataRepository.getOne(id).getNeed())
+                .dbTableNm(unloaddataRepository.getOne(id).getDbTableNm())
+                .updateStr(unloaddataRepository.getOne(id).getUpdateStr())
+                .checkText(unloaddataRepository.getOne(id).getCheckText())
+                .flConst(unloaddataRepository.getOne(id).getFlConst())
+                .constValue(unloaddataRepository.getOne(id).getConstValue())
+                .build();
+        unloaddataRepository.save(unloadData);
 
     }
 

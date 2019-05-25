@@ -99,7 +99,8 @@
             <th>Порядок</th>
             <th>Элемент-родитель</th>
             <th>Название</th>
-            <th>Ид</th>
+            <th>Действия</th>
+            <th hidden>Ид</th>
         </tr>
     <#list udata as udata>
         <tr>
@@ -107,7 +108,10 @@
             <td>${udata.orderNum}</td>
             <td>${udata.dbTableNm!""}</td>
             <td><a href="unloaddatas/${udata.id?string.computer}"> ${udata.name}</td>
-            <td>${udata.id?string.computer}</td>
+            <td><input type="submit" value="Копировать" onclick="function copyData(${udata.id?string.computer}) {
+            
+                    }"></td>
+            <td hidden>${udata.id?string.computer}</td>
         </tr>
     </#list>
     </table>

@@ -1,0 +1,19 @@
+insert into unload_data_type (id,name,description)select 1,'строка','CHARACTER';
+insert into unload_data_type (id,name,description)select 2,'дробное число','NUMERIC';
+insert into unload_data_type (id,name,description)select 3,'целое число','integer';
+insert into unload_data_type (id,name,description)select 4,'дата (без времени)','DATE';
+insert into unload_data_type (id,name,description)select 5,'дата (с временем)','timestamp';
+
+insert into unload_column_type (id,name) select 1,'элемент с вложенными элементами';
+insert into unload_column_type (id,name) select 2,'элемент с атрибутами';
+insert into unload_column_type (id,name) select 3,'элемент/атрибут обязательный';
+insert into unload_column_type (id,name) select 4,'элемент/атрибут необязательный';
+insert into unload_column_type (id,name) select 5,'множественный элемент с элементами';
+insert into unload_column_type (id,name) select 6,'множественный элемент с атрибутами';
+
+insert into unload_package_type (id,name) select 1,'Выгружаемый-загружаемый пакет';
+insert into unload_package_type (id,name) select 2,'Регистр застрахованных';
+insert into unload_package_type (id,name) select 3,'Загрузочный пакет медикаментов';
+insert into unload_package_type (id,name) select 4,'Пакет загрузки из внешнего файла';
+insert into unload_package_type (id,name) select 5,'Загружаемый пакет';
+insert into unload_package_type (id,name) select 6,'Выгружаемый из журнала вызовов';
