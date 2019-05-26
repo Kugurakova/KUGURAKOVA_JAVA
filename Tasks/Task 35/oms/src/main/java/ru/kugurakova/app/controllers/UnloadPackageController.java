@@ -56,4 +56,10 @@ public class UnloadPackageController {
         unloadPackageService.save(unloadPackage);
         return  "redirect:/unloadpackages";
     }
+
+    @PostMapping("/copy/{id}")
+    public String copyPackage(@PathVariable Long id) {
+//        unloadPackageService.copy(id);
+        return "redirect:/unloadpackages";
+    }
 }

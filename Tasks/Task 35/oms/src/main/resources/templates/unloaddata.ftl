@@ -10,53 +10,15 @@
             src="https://code.jquery.com/jquery-3.4.0.js"
             integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
             crossorigin="anonymous"></script>
-    <link type="text/css" rel="stylesheet" href="styles.css" />
     <title>ЭЛЕМЕНТ</title>
     <link rel="stylesheet"
           type="text/css"
           href="<@spring.url '/css/style.css'/>"/>
 </head>
 <script>
-    function getDists() {
-        $.ajax({
-            type: "GET",
-            url: "/udatatypes",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function(response){
-                let resultPlace = document.getElementById('datatype');
-                let resultString ='<option></option>';
-                for (let i = 0; i < response.length; i++){
-                    var current = response[i];
-                    resultString +='<option value='+current['id']+'>'+current['name']+'</option>';
-                }
-                resultPlace.innerHTML=resultString;
-            },
-            failure: function (errMsg) {
-                alert(errMsg);
-            }
-        });
-        $.ajax({
-            type: "GET",
-            url: "/ucolumntypes",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function(response){
-                let resultPlace = document.getElementById('columntype');
-                let resultString ='<option></option>';
-                for (let i = 0; i < response.length; i++){
-                    var current = response[i];
-                    resultString +='<option value='+current['id']+'>'+current['name']+'</option>';
-                }
-                resultPlace.innerHTML=resultString;
-            },
-            failure: function (errMsg) {
-                alert(errMsg);
-            }
-        });
-    }
+
 </script>
-<body  onload="getDists();">
+<body>
 <div>
     <fieldset>
         <legend>ЭЛЕМЕНТ</legend>

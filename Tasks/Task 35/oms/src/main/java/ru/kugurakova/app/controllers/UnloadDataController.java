@@ -52,7 +52,7 @@ public class UnloadDataController {
     }
 
     @PostMapping("/copy/{id}")
-    public String copy(@PathVariable Long id) {
+    public String copyData(@PathVariable Long id) {
         unloadDataService.copy(id);
         return "redirect:/unloadpackages";
     }
